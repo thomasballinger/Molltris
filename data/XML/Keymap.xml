@@ -1,0 +1,23 @@
+<!-- TODO: Use names from pygame.locals instead of numeric literals;
+ |         right now you might as well just be storing binary data
+ |         this shit ain't human readable.
+ |-->
+
+<keymaps>
+    <menu>
+        <down type="int">274</down>
+        <back type="int">8</back>
+        <select type="int">13</select>
+        <up type="int">273</up>
+    </menu>
+    <game>
+        <rotate_left type="int">279</rotate_left>
+        <pause type="int">27</pause>
+        <speed_up type="int">274</speed_up>
+        <move_left type="int">276</move_left>
+        <move_right type="int">275</move_right>
+        <drop_down type="int">32</drop_down>
+        <rotate_right type="int">273</rotate_right>
+        <reverse type="int">281</reverse>
+    </game>
+</keymaps>

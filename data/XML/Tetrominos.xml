@@ -1,0 +1,34 @@
+<tetrominos true="#" false="_">
+    <tetromino name="I" color="#3322DD">
+        #
+        #
+        #
+        #
+    </tetromino>
+    <tetromino name="O" color="#FFFF33">
+        ##
+        ##
+    </tetromino>
+    <tetromino name="L" color="#CC2222">
+        #_
+        #_
+        ##
+    </tetromino>
+    <tetromino name="J" color="#33FF00">
+        _#
+        _#
+        ##
+    </tetromino>
+    <tetromino name="Z" color="#FF6600">
+        ##_
+        _##
+    </tetromino>
+    <tetromino name="S" color="#3399FF">
+        _##
+        ##_
+    </tetromino>
+    <tetromino name="T" color="#bbbbbb">
+        _#_
+        ###
+    </tetromino>
+</tetrominos>
