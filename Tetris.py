@@ -380,6 +380,7 @@ class Game(object):
         self.playing = ""
         Pygame.mixer.music.stop()
 
+    ## TODO: The call/quit model currently fails here, I'll just have to save the music's "progress."
     def playMusic(self, path, loops=1):
         try:
             if not self.sound_enabled:
