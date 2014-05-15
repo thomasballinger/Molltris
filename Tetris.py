@@ -92,8 +92,8 @@ def printTetromino(matrix, t="#", f=" "):
         print
 
 def flip(matrix):
-    for l in matrix:
-        l.reverse()
+    for row in matrix:
+        row.reverse()
 
 ## Because computing the next iteration is in this case better
 ## than storing all of them in order.
