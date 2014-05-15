@@ -26,7 +26,6 @@ import Log
 import os.path
 from pygame.locals import *
 from Exceptions import *
-from xml.etree import ElementTree
 
 tetrominos = None
 keymap = None
