@@ -216,6 +216,9 @@ class Tetromino(object):
         for event in events:
             if event.type == KEYUP:
                 if event.key == keymap["game"]["speed_up"] and self.sped_up:
+                    # I found this behavior unintuitive (thought it was odd that
+                    # pressing down repeatedly didn't move the piece down) but
+                    # this seems like reasonable behavior.
                     self.sped_up = False
                     self.updateinterval *= 10
                     self.time_until_update = self.updateinterval
