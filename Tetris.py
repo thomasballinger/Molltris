@@ -651,9 +651,6 @@ class Menu(Game):
         option = self.menu[self.options[self.selected]]
         option()
 
-    def colorOf(obj):
-        return self.colorscheme.get(obj, self.colorscheme[obj])
-
     def eventHandler(self, events):
         for event in events:
             if event.type == QUIT:
