@@ -128,27 +128,25 @@ class Tetromino(object):
         if y == None:
             self.y = -(len(self.matrix))
 
-    ## Hackety hack
-    def forBlock(self, func, boolean=False):
+    def block_spots(self):
         for y in xrange(len(self.matrix)):
             for x in xrange(len(self.matrix[y])):
-                if self.matrix[y][x] and func(self.x + x, self.y + y, self.matrix) and boolean:
-                    return True
+                if self.matrix[y][x]:
+                    yield self.x + x, self.y + y
 
     def draw(self):
-        def drawBlock(x, y, _):
+        for x, y in self.block_spots():
             self.board.drawCube(x, y, self.color)
-        self.forBlock(drawBlock)
 
     def insert(self):
-        def insert(x, y, _):
-            self.board.blocks[(x, y)] = self.color
 
         if self.y < 0:
             ## XXX: GAME OVER
             self.board.update_required = False
 
-        self.forBlock(insert)
+        for x, y in self.block_spots():
+            self.board.blocks[(x, y)] = self.color
+
         self.board.checkTetris()
         self.update_required = False
 
@@ -163,9 +161,7 @@ class Tetromino(object):
             self.moveDiagonal(1)
 
     def checkBlockCollision(self):
-        def colliding(x, y, _):
-            return self.board.blocks.get((x, y))
-        return self.forBlock(colliding, boolean=True)
+        return any(self.board.blocks.get((x, y)) for x, y in self.block_spots())
 
     def checkWallCollision(self, xp, yp):
         for y in xrange(len(self.matrix)):
